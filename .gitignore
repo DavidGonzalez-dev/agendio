@@ -1,0 +1,32 @@
+# Project planning (kept out of the public repo)
+project-idea-spec.md
+docs/tasks/
+
+# Tooling / local config
+.atl/
+.claude/
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files (keep .env.example templates committed)
+.env
+.env.local
+.env.*.local
+
+# Node / frontend
+node_modules/
+dist/
+build/
+
+# Go
+bin/
+*.exe
+coverage.out
+*.test
+
+# Logs
+*.log

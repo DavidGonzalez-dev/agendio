@@ -1,0 +1,13 @@
+# Tooling / local config
+.atl/
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Go build artifacts
+bin/
+*.exe
+coverage.out
+*.test
