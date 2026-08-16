@@ -22,11 +22,12 @@ func (e HTTPErr) Error() string {
 	return fmt.Sprintf("HTTP Status: %d Error Code: %s Message: %s", e.CustomErr.HTTPStatus, e.CustomErr.Code, e.CustomErr.Message)
 }
 
-func HTTPErrorHandler(err error, c echo.Context) error {
+func HTTPErrorHandler(err error, c echo.Context) {
 	customError, ok := err.(HTTPErr)
 	if !ok {
-		return c.JSON(http.StatusInternalServerError, map[string]string{"message": "internal server error, check logs"})
+		c.JSON(http.StatusInternalServerError, map[string]string{"message": "internal server error, check logs"})
+		return
 	}
 
-	return c.JSON(int(customError.CustomErr.HTTPStatus), err)
+	c.JSON(int(customError.CustomErr.HTTPStatus), err)
 }
